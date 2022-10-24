@@ -1,0 +1,107 @@
+buble sort:
+[5,56,21,0]
+
+step1:
+[5,56,21,0]
+[5,21,56,0]
+[5,21,0,56]
+step2:
+[5,21,0,56]
+[5,0,21,56]
+[5,0,21,56]
+step3:
+[0,5,21,56]
+[0,5,21,56]
+[0,5,21,56]
+PROCEDURE swap(var x,z:INTEGER)
+VAR
+    y:INTEGER
+BEGIN
+    y:=x
+    x:=z
+    z:=y
+END
+
+
+
+
+
+
+PROCEDURE buble(var tab: ARRAY_OF INTEGER[250]; )
+VAR
+    i,j:INTEGER
+BEGIN
+FOR i FROM 0 TO tab.length-1 STEP 1  DO
+
+    FOR j FROM 0 TO tab.length-i-1 STEP 1  DO
+        IF (tab[j]>tab[j+1]) THEN
+
+           swap(tab[j],tab[j+1])
+        
+        END_IF
+    END_FOR
+END_FOR    
+END
+
+selection sort:
+[64,22,12,13]
+
+step1:
+[12,22,64,13]
+step2:
+[12,13,64,22]
+step3:
+[12,13,22,64]
+
+PROCEDURE selection_sort (var tab: ARRAY_OF INTEGER[250];)
+VAR
+    i,j,n,f:INTEGER
+BEGIN
+n:=tab.length
+    FOR i FROM 0 TO n-1 STEP 1  DO
+    f:=i
+        FOR j FROM i+1 TO n-1 STEP 1  DO
+            if (tab[j]<tab[f]) THEN
+            f:=j
+    
+        END_FOR
+        swap(tab[j],tab[i])
+    
+    END_FOR
+
+END
+   
+
+
+   ALGORITHM tri_insertion
+   VAR
+    tab : ARRAY_OF INTEGER[150];
+    i,j,m:INTEGER
+   BEGIN
+
+    FOR i FROM 1 TO tab.length STEP 1  DO
+        m:=tab[i]
+    j:=i-1
+        WHILE (j>=0 tab[j]>m) DO
+
+            tab[j+1]=tab[j]
+            j:=j-1
+        END_WHILE
+    tab[j+1]=m
+    END_FOR
+
+   END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
